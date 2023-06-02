@@ -2,6 +2,14 @@ public class Cinema {
     private String[] titles = new String[0];
     private int amountOfTitles = 5;
 
+    public Cinema() {
+        String[] titles = new String[5];
+    }
+
+    public Cinema(int amountOfTitles) {
+        String[] titles = new String[amountOfTitles];
+    }
+
     public void addTitle(String title) {
         String[] tmp = new String[titles.length + 1];
         for (int i = 0; i < titles.length; i++) {

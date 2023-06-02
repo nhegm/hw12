@@ -12,7 +12,7 @@ public class CinemaTest {
 
     @Test
     public void ShouldAddTitleThenShow() {
-        Cinema cinemaTesting = new Cinema();
+        Cinema cinemaTesting = new Cinema(3);
         cinemaTesting.addTitle(title1);
         cinemaTesting.addTitle(title2);
         cinemaTesting.addTitle(title3);
@@ -26,7 +26,7 @@ public class CinemaTest {
     @Test
     public void ShouldAddTitleThenShowReversedArrayLength5() {
 
-        Cinema cinemaTesting = new Cinema();
+        Cinema cinemaTesting = new Cinema(7);
         cinemaTesting.addTitle(title1);
         cinemaTesting.addTitle(title2);
         cinemaTesting.addTitle(title3);
@@ -44,7 +44,7 @@ public class CinemaTest {
     @Test
     public void ShouldAddTitleThenShowReversedArrayLength3() {
 
-        Cinema cinemaTesting = new Cinema();
+        Cinema cinemaTesting = new Cinema(7);
         cinemaTesting.addTitle(title1);
         cinemaTesting.addTitle(title2);
         cinemaTesting.addTitle(title3);
@@ -62,7 +62,7 @@ public class CinemaTest {
     @Test
     public void ShouldAddTitleThenShowReversedArrayLength6() {
 
-        Cinema cinemaTesting = new Cinema();
+        Cinema cinemaTesting = new Cinema(7);
         cinemaTesting.addTitle(title1);
         cinemaTesting.addTitle(title2);
         cinemaTesting.addTitle(title3);
@@ -73,6 +73,41 @@ public class CinemaTest {
         cinemaTesting.findLast(6);
         String[] expected = {title7, title6, title5, title4, title3, title2};
         String[] actual = cinemaTesting.findLast(6);
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void ShouldAddTitleInCinema() {
+
+        Cinema cinemaTesting = new Cinema();
+        cinemaTesting.addTitle(title1);
+        cinemaTesting.addTitle(title2);
+        cinemaTesting.addTitle(title3);
+        cinemaTesting.addTitle(title4);
+        cinemaTesting.addTitle(title5);
+
+        cinemaTesting.findLast(3);
+        String[] expected = {title5, title4, title3};
+        String[] actual = cinemaTesting.findLast(3);
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void ShouldAddTitleInCinemaWhenLengthAbove5() {
+
+        Cinema cinemaTesting = new Cinema();
+        cinemaTesting.addTitle(title1);
+        cinemaTesting.addTitle(title2);
+        cinemaTesting.addTitle(title3);
+        cinemaTesting.addTitle(title4);
+        cinemaTesting.addTitle(title5);
+        cinemaTesting.addTitle(title6);
+
+        cinemaTesting.findLast(3);
+        String[] expected = {title6, title5, title4};
+        String[] actual = cinemaTesting.findLast(3);
 
         Assertions.assertArrayEquals(expected, actual);
     }
