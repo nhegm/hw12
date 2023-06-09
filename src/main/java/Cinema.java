@@ -25,10 +25,10 @@ public class Cinema {
 
     public String[] findLast() {
         int resultLength;
-        if (titles.length < 5) {
+        if (amountOfTitles >= titles.length) {
             resultLength = titles.length;
         } else {
-            resultLength = 5;
+            resultLength = amountOfTitles;
         }
         String[] reversed = new String[resultLength];
         for (int i = 0; i < resultLength; i++) {
