@@ -74,4 +74,18 @@ public class CinemaTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void ShouldFind3Last() {
+
+        Cinema cinemaTesting = new Cinema();
+
+        cinemaTesting.addTitle(title1);
+        cinemaTesting.addTitle(title4);
+        cinemaTesting.addTitle(title3);
+
+        String[] expected = {title3, title4, title1};
+        String[] actual = cinemaTesting.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }

@@ -24,9 +24,14 @@ public class Cinema {
     }
 
     public String[] findLast() {
-
-        String[] reversed = new String[amountOfTitles];
-        for (int i = 0; i < amountOfTitles; i++) {
+        int resultLength;
+        if (titles.length < 5) {
+            resultLength = titles.length;
+        } else {
+            resultLength = 5;
+        }
+        String[] reversed = new String[resultLength];
+        for (int i = 0; i < resultLength; i++) {
             reversed[i] = titles[titles.length - 1 - i];
         }
         return reversed;
